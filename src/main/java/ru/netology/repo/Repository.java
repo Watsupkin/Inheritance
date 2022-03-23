@@ -33,27 +33,5 @@ public class Repository {
         items = tmp;
     }
 
-    public boolean matches(Product product, String search) {
-        if (product instanceof Book) { // если в параметре product лежит объект класса Book
-            Book book = (Book) product; // положем его в переменную типа Book чтобы пользоваться методами класса Book
-            if (book.getAuthor().contains(search)) { // проверим есть ли поисковое слово в данных об авторе
-                return true;
-            }
-            if (book.getName().contains(search)) {
-                return true;
-            }
-            return false;
-        }
 
-        if (product instanceof Smartphone) {
-            Smartphone smartphone = (Smartphone) product;
-            if (smartphone.getProducer().contains(search)) {
-                return true;
-            }
-            if (smartphone.getName().contains(search)) {
-                return true;
-            }
-        }
-        return false;
-    }
 }

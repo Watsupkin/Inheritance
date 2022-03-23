@@ -8,6 +8,9 @@ public class Smartphone extends Product {
         this.producer = producer;
     }
 
+    public Smartphone() {
+    }
+
     public String getProducer() {
         return producer;
     }
@@ -15,8 +18,6 @@ public class Smartphone extends Product {
     public void setProducer(String producer) {
         this.producer = producer;
     }
-
-    public Smartphone(){}
 
 
 }

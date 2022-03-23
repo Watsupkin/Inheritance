@@ -15,14 +15,35 @@ class ManagerTest {
     Product tshort = new Product(3, "TShort", 200);
 
     @Test
-    void shouldSearchBy() {
+    void shouldSearchByProducer() {
         man.add(book);
         man.add(smartphone);
         man.add(tshort);
-        man.searchBy("Samsung");
 
         Product[] expected = {smartphone};
         Product[] actual = man.searchBy("Samsung");
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void shouldSearchByName() {
+        man.add(book);
+        man.add(smartphone);
+        man.add(tshort);
+
+        Product[] expected = {book};
+        Product[] actual = man.searchBy("Kolobok");
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void shouldSearchByAuthor() {
+        man.add(book);
+        man.add(smartphone);
+        man.add(tshort);
+
+        Product[] expected = {book};
+        Product[] actual = man.searchBy("ChackPalanik");
         assertArrayEquals(expected, actual);
     }
 }
