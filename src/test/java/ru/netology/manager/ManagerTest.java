@@ -15,7 +15,7 @@ class ManagerTest {
     Smartphone smartphone = new Smartphone(2, "GalaxyA6", 20000, "Samsung");
     Product tshort = new Product(3, "TShort", 200);
     Smartphone smartphone1 = new Smartphone(4, "GalaxyS6", 25000, "Samsung");
-
+    Smartphone smartphone2 = new Smartphone(5, "3310", 20000, "Nokia");
 
     @BeforeEach
     public void initEach() {
@@ -23,13 +23,14 @@ class ManagerTest {
         man.add(smartphone);
         man.add(tshort);
         man.add(smartphone1);
+        man.add(smartphone2);
     }
 
     @Test
     void shouldSearchByProducer() {
 
-        Product[] expected = {smartphone};
-        Product[] actual = man.searchBy("Samsung");
+        Product[] expected = {smartphone2};
+        Product[] actual = man.searchBy("Nokia");
         assertArrayEquals(expected, actual);
     }
 
